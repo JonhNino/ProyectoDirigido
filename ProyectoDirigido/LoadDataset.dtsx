@@ -11,171 +11,16 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{6BB38917-6C7C-45C6-8AFF-03F6C294094E}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{F165A745-070D-4290-890B-682EF0959A15}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-LSG58H1\SQLSERVER.Proyecto]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{81A5E27E-67F6-4084-8E59-D384737FAF70}"
-      DTS:ObjectName="DESKTOP-LSG58H1\SQLSERVER.Proyecto">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LSG58H1\SQLSERVER;Initial Catalog=Proyecto;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{81A5E27E-67F6-4084-8E59-D384737FAF70}DESKTOP-LSG58H1\SQLSERVER.Proyecto;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-LSG58H1\SQLSERVER.Proyecto 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{0594CC63-0AFC-4030-851F-44DC54FFB5B5}"
-      DTS:ObjectName="DESKTOP-LSG58H1\SQLSERVER.Proyecto 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LSG58H1\SQLSERVER;Initial Catalog=Proyecto;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{0594CC63-0AFC-4030-851F-44DC54FFB5B5}DESKTOP-LSG58H1\SQLSERVER.Proyecto 1;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-LSG58H1\SQLSERVER.STAGEUPTC]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{AC25EFBF-5B8D-46C2-BD82-FC9EE54E7FAF}"
-      DTS:ObjectName="DESKTOP-LSG58H1\SQLSERVER.STAGEUPTC">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LSG58H1\SQLSERVER;Initial Catalog=STAGEUPTC;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{AC25EFBF-5B8D-46C2-BD82-FC9EE54E7FAF}DESKTOP-LSG58H1\SQLSERVER.STAGEUPTC;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{6976C0E5-D5FC-45FF-AF93-EA1110887747}"
-      DTS:ObjectName="Flat File Connection Manager">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\LENOVO\Desktop\Espe\Trabajo Dirigido\Dataset\csv.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Pair"
-              DTS:DTSID="{F186FA13-4DC3-42EC-9313-F85E3FFDF08B}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="From_Currency"
-              DTS:DTSID="{30F37889-3DE5-4E5B-857C-98FB51B99BDF}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="To_Currency"
-              DTS:DTSID="{8373F08E-DA60-44B2-9672-D3D810366C42}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Date"
-              DTS:DTSID="{1045F7C5-278D-4773-AB7C-797FE6EC0FCE}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Price"
-              DTS:DTSID="{78EA6294-1FD1-41DA-9086-A80EB0351166}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Open"
-              DTS:DTSID="{C35B2BC8-0602-4800-849D-F68168B97636}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="High"
-              DTS:DTSID="{052D9CE2-B840-4F1B-9864-F588CF420940}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Low"
-              DTS:DTSID="{E2507792-34FA-414E-87EC-9E1C377F1528}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Vol "
-              DTS:DTSID="{2AD15758-EC96-46CF-913B-9EA114A47409}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Change %"
-              DTS:DTSID="{B2B3FF58-89AF-428E-B8F2-AE651F8725D2}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Source"
-              DTS:DTSID="{6B3A6407-E8B6-467B-8CEF-919FA8E0F7B2}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
-      DTS:CreationName="FLATFILE"
       DTS:DTSID="{EF0B13D3-80B0-480B-8806-093BDD3DEFEC}"
-      DTS:ObjectName="Flat File Connection Manager 1">
+      DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -650,8 +495,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -1032,8 +877,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LSG58H1\SQLSERVER.Proyecto]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LSG58H1\SQLSERVER.Proyecto]"
+                  connectionManagerID="{6E622B5C-E00A-480F-8434-3A1B37E34549}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-LSG58H1_SQLSERVER.Proyecto]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1135,32 +980,29 @@
                       name="To_Currency" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date1]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="50"
                       name="Date1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
-                      dataType="numeric"
-                      name="Price"
-                      precision="18"
-                      scale="2" />
+                      dataType="wstr"
+                      length="50"
+                      name="Price" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Open1]"
-                      dataType="numeric"
-                      name="Open1"
-                      precision="18"
-                      scale="2" />
+                      dataType="wstr"
+                      length="50"
+                      name="Open1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[High1]"
-                      dataType="numeric"
-                      name="High1"
-                      precision="18"
-                      scale="2" />
+                      dataType="wstr"
+                      length="50"
+                      name="High1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Low1]"
-                      dataType="numeric"
-                      name="Low1"
-                      precision="18"
-                      scale="2" />
+                      dataType="wstr"
+                      length="50"
+                      name="Low1" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vol]"
                       dataType="wstr"
@@ -1168,10 +1010,9 @@
                       name="Vol" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Change_Percentage]"
-                      dataType="numeric"
-                      name="Change_Percentage"
-                      precision="5"
-                      scale="2" />
+                      dataType="wstr"
+                      length="50"
+                      name="Change_Percentage" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1246,13 +1087,13 @@
           Id="Package\Data Flow Task\Flat File Source"
           TopLeft="257.916656417979,26.0000008550184" />
         <NodeLayout
-          Size="156,41.7777777777778"
-          Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="255.83332316743,110.275865695422" />
-        <NodeLayout
           Size="170.666666666667,41.7777777777778"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="240.833323763477,186.034488876424" />
+        <NodeLayout
+          Size="156,41.7777777777778"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="255.83332316743,110.275865695422" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="333.541656459371,67.7777786327962">
