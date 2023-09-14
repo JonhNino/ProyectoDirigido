@@ -26,13 +26,14 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-LSG58H1</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvLBIH9a7mUicSd+dLsEHEQAAAAACAAAAAAAQZgAAAAEAACAAAABeyXf5AdmCCtG6YA8RAxCNGqvvCkxPCQTabFr4TjewnQAAAAAOgAAAAAIAACAAAAA2CIw/yYr3uJe6KOpZNROZkSm+eTaZFW44wQHu/nhyOZAAAACNR1EUQwVWFu4fA0D7MY7EaNzK+GHqICCFXgMWyvAa00GNLt+DI+hT31pVpYz+zIHdolPFVOc6MQWJmYEf/fa5rhgufMhazGBwBWxtGCcLpFluNDQCBeZpWvrNorwH39M5tibFNIshLDAuc38CYizRT11QujXMzr9hO/AfwWjvcbhOQDekbtPhIiaB5Hsq5WBAAAAAWLwgFuOzLeI1VytQCWjzD0nTk5qCWbVCIVcWpdGQ7OO/SDi9/GjZocEud3GL/6W3sz+BANL2cHRnNkAAYQ59bg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvLBIH9a7mUicSd+dLsEHEQAAAAACAAAAAAAQZgAAAAEAACAAAAD53fbdwR2TGQ7JonvDom+biVkNK8Xxa2eX3Uj2+pY/ggAAAAAOgAAAAAIAACAAAABK9hWP9hm+3KlcfShKa+pabl6CirBlc1RyiwtvaKXvdJAAAABT0n2BrHhZilNHG+6iYAgW+bWIUckbFrNV4OGqw7OIWLEsiU0zhd4bnnwS8CBl51tHYS/mng6nOHdr0BSt9YqekYDS4ixBeKgo5+41e3dIqarIIFRPs3oNKIgxEk4uJlgbD+RXhJBfifvrhPrVOpeEDRvH7Q5LEtYxTD0zCakegoqXZHKlJvvfPlrUcGc/EIRAAAAAdA3+vQ4lAJgDWWcQp8YDi/vobwMOX8UEwTMEYiNma+8mdjc42Osdb/hvsHZlnAl3MPTnlsFSjTBY+ilVyW4VHQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="LoadDataset.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ETL_DIM_MONEDA.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ETL_DIM_TRANSACCION.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ETL_DIM_TIEMPO.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="DESKTOP-LSG58H1_SQLSERVER.Proyecto.conmgr" />
@@ -431,6 +432,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{A3BBBF7C-E41F-44DC-944A-7030FFD73F60}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ETL_DIM_TIEMPO.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{0932859B-0142-4227-938C-80DF9C598FC7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{0F37A33C-A4D2-4F1B-A342-41DD553BDC68}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
