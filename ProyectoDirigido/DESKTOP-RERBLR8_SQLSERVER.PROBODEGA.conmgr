@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-RERBLR8_SQLSERVER.PROBODEGA"
+  DTS:DTSID="{80D42FB5-3841-43F7-B60B-F36359D75AF9}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-RERBLR8\SQLSERVER;Initial Catalog=PROBODEGA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ProyectoDirigido-{80D42FB5-3841-43F7-B60B-F36359D75AF9}DESKTOP-RERBLR8\SQLSERVER.PROBODEGA;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
