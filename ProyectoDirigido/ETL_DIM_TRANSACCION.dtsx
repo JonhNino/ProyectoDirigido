@@ -11,10 +11,24 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{A3BBBF7C-E41F-44DC-944A-7030FFD73F60}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{304F3AF1-47DD-4C3C-ADA3-6DF4C9722013}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{25418683-152C-44B1-A37E-6E1494ED998B}"
+      DTS:ObjectName="DESKTOP-RERBLR8\SQLSERVER.PROBODEGA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-RERBLR8\SQLSERVER;Initial Catalog=PROBODEGA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{25418683-152C-44B1-A37E-6E1494ED998B}DESKTOP-RERBLR8\SQLSERVER.PROBODEGA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -286,7 +300,7 @@
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT SK_DIM_TRANSACCION,
 	CONCAT(STR_PAIR, STR_PRICE, STR_OPEN,STR_HIGH,STR_LOW,STR_VOL,STR_CHANGE) AS LLAVE
-FROM [Proyecto].[dbo].[TBL_DIM_TRANSACCION_T0]</property>
+FROM [PROBODEGA].[dbo].[TBL_DIM_TRANSACCION_T0]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
@@ -294,7 +308,7 @@ FROM [Proyecto].[dbo].[TBL_DIM_TRANSACCION_T0]</property>
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT SK_DIM_TRANSACCION,
 	CONCAT(STR_PAIR, STR_PRICE, STR_OPEN,STR_HIGH,STR_LOW,STR_VOL,STR_CHANGE) AS LLAVE
-FROM [Proyecto].[dbo].[TBL_DIM_TRANSACCION_T0]) [refTable]
+FROM [PROBODEGA].[dbo].[TBL_DIM_TRANSACCION_T0]) [refTable]
 where [refTable].[LLAVE] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -344,8 +358,8 @@ where [refTable].[LLAVE] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{6E622B5C-E00A-480F-8434-3A1B37E34549}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-LSG58H1_SQLSERVER.Proyecto]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -492,8 +506,8 @@ where [refTable].[LLAVE] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{6E622B5C-E00A-480F-8434-3A1B37E34549}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-LSG58H1_SQLSERVER.Proyecto]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -666,7 +680,7 @@ where [refTable].[LLAVE] = ?</property>
 	  ,[Low1]
 	  ,[Vol]
 	  ,[Change_Percentage]
-FROM [Proyecto].[dbo].[CurrencyExchange]</property>
+FROM [PROBODEGA].[dbo].[CurrencyExchange]</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -692,8 +706,8 @@ FROM [Proyecto].[dbo].[CurrencyExchange]</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{6E622B5C-E00A-480F-8434-3A1B37E34549}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-LSG58H1_SQLSERVER.Proyecto]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -950,7 +964,7 @@ FROM [Proyecto].[dbo].[CurrencyExchange]</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="151.111111111112,41.7777777777778"
+          Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="197.916658802165,78.8965543186765" />
       </GraphLayout>
@@ -962,13 +976,29 @@ FROM [Proyecto].[dbo].[CurrencyExchange]</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="149.777777777778,41.7777777777778"
+          Size="113,42"
+          Id="Package\Data Flow Task\Lookup"
+          TopLeft="344.583319640822,177.923377337804" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="320.083320832915,109.500003420074" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Data Flow Task\Row Count"
+          TopLeft="561.666644348039,240.072802345068" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="319.999987284343,329.467440306298" />
+        <NodeLayout
+          Size="150,42"
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="316.249987433354,22.4137938405331" />
         <NodeLayout
-          Size="153.333333333334,41.7777777777778"
-          Id="Package\Data Flow Task\Derived Column"
-          TopLeft="320.083320832915,109.500003420074" />
+          Size="155,42"
+          Id="Package\Data Flow Task\Conditional Split"
+          TopLeft="321.249987234673,247.586213854632" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="393.944431910913,64.1915716183109">
@@ -991,92 +1021,6 @@ FROM [Proyecto].[dbo].[CurrencyExchange]</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="112.888888888889,41.7777777777778"
-          Id="Package\Data Flow Task\Lookup"
-          TopLeft="344.583319640822,177.923377337804" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="398.888875792424,151.277781197851">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26.645596139953"
-              Start="0,0"
-              End="0,19.145596139953">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.145596139953" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154.666666666667,41.7777777777778"
-          Id="Package\Data Flow Task\Conditional Split"
-          TopLeft="321.249987234673,247.586213854632" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="399.805542326636,219.701155115582">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.8850587390502"
-              Start="0,0"
-              End="0,20.3850587390502">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.3850587390502" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,4.38784186952509,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="129.777777777778,41.7777777777778"
-          Id="Package\Data Flow Task\Row Count"
-          TopLeft="561.666644348039,240.072802345068" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[REPETIDO]"
-          TopLeft="475.916653901339,264.718396988739">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="85.7499904466999,0"
-              Start="0,0"
-              End="78.2499904466999,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="78.2499904466999,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="15.47218272335,5,47.305625,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170.666666666667,41.7777777777778"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="319.999987284343,329.467440306298" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[NUEVO]"
           TopLeft="401.958320592841,289.36399163241">
@@ -1101,17 +1045,79 @@ FROM [Proyecto].[dbo].[CurrencyExchange]</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="399.805542326636,219.701155115582">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.8850587390502"
+              Start="0,0"
+              End="0,20.3850587390502">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3850587390502" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,4.38784186952509,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="398.888875792424,151.277781197851">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.645596139953"
+              Start="0,0"
+              End="0,19.145596139953">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.145596139953" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[REPETIDO]"
+          TopLeft="475.916653901339,264.718396988739">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.7499904466999,0"
+              Start="0,0"
+              End="78.2499904466999,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.2499904466999,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="15.47218272335,5,47.305625,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Lookup">
     <Properties>
@@ -1145,6 +1151,14 @@ FROM [Proyecto].[dbo].[CurrencyExchange]</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
