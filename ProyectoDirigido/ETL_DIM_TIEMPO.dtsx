@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{1DEFA6C9-ED20-4506-BEDE-0F34D48F5FC5}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{824CE2FA-4000-4C98-B92B-005B8BA95F4C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1151,7 +1151,7 @@ FROM CurrencyExchange order by 1;</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.07366569802289,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,9.0736656980229,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
