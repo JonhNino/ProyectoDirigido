@@ -1,0 +1,323 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/3/2023 6:46:37 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-LSG58H1"
+  DTS:CreatorName="DESKTOP-LSG58H1\LENOVO"
+  DTS:DTSID="{A824D876-776B-4561-8C6B-F976EF8C36C1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{D2E9A508-BC81-4E38-9DD3-6D34CDF51FE7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{98F0FAF9-9B1D-47DA-B3A8-673483F8AFA1}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\ETL_FACT_TABLE_DIVISAS"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="ETL_FACT_TABLE_DIVISAS"
+          DTS:DTSID="{45a83b1b-c289-47a7-9fea-0994e8fddecd}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ETL_FACT_TABLE_DIVISAS"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ETL_FACT_TABLE_DIVISAS.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQ_PRECESAMIENTO_DIM"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{C140F824-F58C-46DD-9F4E-51D433EB875E}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQ_PRECESAMIENTO_DIM">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQ_PRECESAMIENTO_DIM\ETL_DIM_MONEDA"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="ETL_DIM_MONEDA"
+          DTS:DTSID="{09d9ccd9-ac82-4033-86b9-870b19beded3}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ETL_DIM_MONEDA"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ETL_DIM_MONEDA.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQ_PRECESAMIENTO_DIM\ETL_DIM_TIEMPO"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="ETL_DIM_TIEMPO"
+          DTS:DTSID="{1D65B03B-3A29-4B73-A1D7-C0FB4DB07234}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ETL_DIM_TIEMPO"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ETL_DIM_TIEMPO.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQ_PRECESAMIENTO_DIM\ETL_FACT_TABLE_TRANSACCION"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="ETL_FACT_TABLE_TRANSACCION"
+          DTS:DTSID="{fd9b8b13-653d-4a85-821c-0b41863d5e65}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ETL_FACT_TABLE_TRANSACCION"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ETL_DIM_TRANSACCION.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQ_PRECESAMIENTO_DIM.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{E187C51F-A970-40C0-AAE2-43BFF7BC62FC}"
+          DTS:From="Package\SEQ_PRECESAMIENTO_DIM\ETL_DIM_TIEMPO"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQ_PRECESAMIENTO_DIM\ETL_FACT_TABLE_TRANSACCION" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQ_PRECESAMIENTO_DIM.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{CF4774AD-E06E-4E90-A1B3-F6E93D97F39D}"
+          DTS:From="Package\SEQ_PRECESAMIENTO_DIM\ETL_FACT_TABLE_TRANSACCION"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\SEQ_PRECESAMIENTO_DIM\ETL_DIM_MONEDA" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQ_PROCEDIMIENTO_CARGUE_DATOS"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{9E58E47B-4D36-4403-B976-558F9A077715}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQ_PROCEDIMIENTO_CARGUE_DATOS">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQ_PROCEDIMIENTO_CARGUE_DATOS\LoadDataset"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="LoadDataset"
+          DTS:DTSID="{DA47D481-FAB9-4847-B213-AEA2B5183775}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LoadDataset"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoadDataset.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{66283853-8DD2-44EB-AA7F-746409E5482E}"
+      DTS:From="Package\SEQ_PROCEDIMIENTO_CARGUE_DATOS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SEQ_PRECESAMIENTO_DIM" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9910B49B-4DFC-45DB-8A3F-348E62FC81DF}"
+      DTS:From="Package\SEQ_PRECESAMIENTO_DIM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Sequence Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="183.111111111112,41.7777777777778"
+          Id="Package\SEQ_PROCEDIMIENTO_CARGUE_DATOS\LoadDataset"
+          TopLeft="51.5277740524876,41.5862112895772" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="297.333333333334,140"
+          Size="297.333333333334,183.111111111112"
+          Id="Package\SEQ_PROCEDIMIENTO_CARGUE_DATOS"
+          TopLeft="222.29165783359,152.862073992436" />
+        <NodeLayout
+          Size="208.444444444445,41.7777777777778"
+          Id="Package\SEQ_PRECESAMIENTO_DIM\ETL_DIM_TIEMPO"
+          TopLeft="71.0277528266121,26.2706660164998" />
+        <NodeLayout
+          Size="208.444444444445,41.7777777777778"
+          Id="Package\SEQ_PRECESAMIENTO_DIM\ETL_FACT_TABLE_TRANSACCION"
+          TopLeft="71.8372765509866,115.933504243365" />
+        <NodeLayout
+          Size="208.444444444445,41.7777777777778"
+          Id="Package\SEQ_PRECESAMIENTO_DIM\ETL_DIM_MONEDA"
+          TopLeft="72.8134670413679,213.548720307901" />
+        <EdgeLayout
+          Id="Package\SEQ_PRECESAMIENTO_DIM.PrecedenceConstraints[Constraint]"
+          TopLeft="175.654736911022,68.0484437942776">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.8850604490871"
+              Start="0,0"
+              End="0,40.3850604490871">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.3850604490871" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ_PRECESAMIENTO_DIM.PrecedenceConstraints[Constraint 1]"
+          TopLeft="176.5475940184,157.711282021142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.8374382867582"
+              Start="0,0"
+              End="0,48.3374382867582">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.3374382867582" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="332.888888888889,311.555555555556"
+          Size="332.888888888889,354.666666666667"
+          Id="Package\SEQ_PRECESAMIENTO_DIM"
+          TopLeft="608.005928220967,67.8817756313288" />
+        <NodeLayout
+          Size="208.444444444445,41.7777777777778"
+          Id="Package\Sequence Container\ETL_FACT_TABLE_DIVISAS"
+          TopLeft="32.4860657039631,14.978934389642" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="290.666666666667,112.888888888889"
+          Size="290.666666666667,156"
+          Id="Package\Sequence Container"
+          TopLeft="1030.20829239653,160.258625959812" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="519.624991166923,244.816369256327">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88.3809370540444,0"
+              Start="0,0"
+              End="80.8809370540444,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="80.8809370540444,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="940.894817109856,241.736867462237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.3134752866771,0"
+              Start="0,0"
+              End="81.8134752866771,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="81.8134752866771,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

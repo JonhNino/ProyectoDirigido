@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{FCBD6E21-E847-44A7-8BC0-9FD364BB649B}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{DFD7F316-E656-4FB8-9F8F-A19C62246F95}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -133,6 +133,35 @@
               DTS:TextQualified="True"
               DTS:ObjectName="Change %"
               DTS:DTSID="{5265D092-90F0-45B0-AD83-8D4372CDB567}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E13DD9AF-6C35-41EE-8C7F-E9D066B4D98B}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="9226"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\LENOVO\Desktop\Espe\Trabajo Dirigido\Dataset\Script.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName=" ******Dimension CurrencyExchange ****** "
+              DTS:DTSID="{11A04AF2-7952-48FE-8392-86E9779C81AF}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -490,7 +519,7 @@
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="9226"
+              localeId="1033"
               name="Flat File Source"
               usesDispositions="true"
               version="1">
@@ -507,8 +536,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="{CCF47081-E374-4EC2-B1EF-35D1B35A355A}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Datoscsv]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -889,8 +918,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
+                  connectionManagerID="{6E622B5C-E00A-480F-8434-3A1B37E34549}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-LSG58H1_SQLSERVER.Proyecto]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1083,7 +1112,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="151,42"
+          Size="151.111111111112,41.7777777777778"
           Id="Package\Data Flow Task"
           TopLeft="347.083319541481,45.2758635578768" />
       </GraphLayout>
@@ -1095,15 +1124,15 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
+          Size="151.111111111112,41.7777777777778"
           Id="Package\Data Flow Task\Flat File Source"
           TopLeft="257.916656417979,26.0000008550184" />
         <NodeLayout
-          Size="171,42"
+          Size="170.666666666667,41.7777777777778"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="263.833323763477,186.034488876424" />
+          TopLeft="253.416657510731,184.689661245992" />
         <NodeLayout
-          Size="156,42"
+          Size="156,41.7777777777778"
           Id="Package\Data Flow Task\Data Conversion"
           TopLeft="255.83332316743,110.275865695422" />
         <EdgeLayout
@@ -1130,30 +1159,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="333.83332316743,152.275865695422">
+          TopLeft="336.291657005747,152.0536434732">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="15.500000596047,33.758623181002"
+              EndConnector="0,32.6360177727922"
               Start="0,0"
-              End="15.500000596047,26.258623181002">
+              End="0,25.1360177727922">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.879311590501" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.879311590501"
-                    Point2="0,16.879311590501"
-                    Point3="4,16.879311590501" />
-                  <mssgle:LineSegment
-                    End="11.500000596047,16.879311590501" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11.500000596047,16.879311590501"
-                    Point2="15.500000596047,16.879311590501"
-                    Point3="15.500000596047,20.879311590501" />
-                  <mssgle:LineSegment
-                    End="15.500000596047,26.258623181002" />
+                    End="0,25.1360177727922" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
