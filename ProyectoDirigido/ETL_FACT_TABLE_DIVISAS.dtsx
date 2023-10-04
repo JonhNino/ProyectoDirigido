@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{2C4D7BBE-1219-4545-B0DD-F1CA1E3D0D63}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{373AB1B6-40E0-4915-BFAF-1A2363A0C3FF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -854,12 +854,12 @@ where [refTable].[LLAVE] = ?</property>
     FORMAT(convert(date, CE.Date1),'yyyyMMdd') AS SK_DIM_TIEMPO,
     TRIM(CONCAT(CE.From_Currency, CE.To_Currency)) AS MONEDA,
     TRIM(CONCAT(CE.Pair, CE.Price, CE.Open1, CE.High1, CE.Low1, CE.Vol, CE.Change_Percentage)) AS TRANSACCION,
-    TRY_CAST(CE.Price as float) AS PRECIO,
-    TRY_CAST(CE.Open1 as float) AS APERTURA,
-    TRY_CAST(CE.High1 as float) AS MAXIMO,
-    TRY_CAST(CE.Low1 as float) AS MINIMO,
-	TRY_CAST(CE.Vol as float) AS VOLUMEN,
-    TRY_CAST(CE.Change_Percentage as float) AS CAMBIO_PORCENTAJE    
+    CE.Price AS PRECIO,
+    CE.Open1 AS APERTURA,
+    CE.High1 AS MAXIMO,
+    CE.Low1 AS MINIMO,
+	Try_CAST(CE.Vol as float)AS VOLUMEN,
+    Try_CAST(CE.Change_Percentage as float) AS CAMBIO_PORCENTAJE    
 FROM [Proyecto].[dbo].[CurrencyExchange] CE;</property>
                 <property
                   dataType="System.String"
@@ -1000,19 +1000,23 @@ FROM [Proyecto].[dbo].[CurrencyExchange] CE;</property>
                       name="TRANSACCION" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRECIO]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       name="PRECIO" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[APERTURA]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       name="APERTURA" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MAXIMO]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       name="MAXIMO" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MINIMO]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       name="MINIMO" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VOLUMEN]"
@@ -1049,22 +1053,26 @@ FROM [Proyecto].[dbo].[CurrencyExchange] CE;</property>
                       name="TRANSACCION" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRECIO]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRECIO]"
                       name="PRECIO" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[APERTURA]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[APERTURA]"
                       name="APERTURA" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MAXIMO]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MAXIMO]"
                       name="MAXIMO" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MINIMO]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MINIMO]"
                       name="MINIMO" />
                     <outputColumn

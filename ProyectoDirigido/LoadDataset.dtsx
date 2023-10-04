@@ -11,11 +11,121 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{DFD7F316-E656-4FB8-9F8F-A19C62246F95}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{A54CF11F-26E2-4171-8E36-3891ACE2B0AA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Conexion2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{84970B64-D02C-4332-982F-A97164EF1A16}"
+      DTS:ObjectName="Conexion2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="9226"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022__x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\LENOVO\Desktop\Espe\Trabajo Dirigido\TABLAMONEDA.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pair"
+              DTS:DTSID="{8E4B9A37-14B9-463E-B187-777335B27B08}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="From_Currency"
+              DTS:DTSID="{80B8865C-96B1-4FEE-93C8-0022F1AF02EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="To_Currency"
+              DTS:DTSID="{5A63068F-BC0B-4AFB-A909-5C0074C45958}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{A91DE28C-13E7-4FAC-8F2C-4D3269F7D5AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{A5EC7439-C88D-4E43-9F67-A9A011C5ED51}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Open"
+              DTS:DTSID="{5EC8943D-F911-4686-9941-0CCEF213F098}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="High"
+              DTS:DTSID="{2FB3097D-BA7B-4CAC-8219-0C7437F52342}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Low"
+              DTS:DTSID="{0F5BDDCF-C304-40CE-ADED-EC1C4C76CA04}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vol"
+              DTS:DTSID="{28F3A05C-5F42-45C7-A1B6-F18BB609FAAD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Change %"
+              DTS:DTSID="{DFA74FDF-4390-4F78-97E1-3AAF430E8DF8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
       DTS:CreationName="OLEDB"
@@ -162,6 +272,116 @@
               DTS:TextQualified="True"
               DTS:ObjectName=" ******Dimension CurrencyExchange ****** "
               DTS:DTSID="{11A04AF2-7952-48FE-8392-86E9779C81AF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ProyectoDirigidoIntento1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BFBA092E-F5CF-4BD9-A585-3D1020A0B367}"
+      DTS:ObjectName="ProyectoDirigidoIntento1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="9226"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\LENOVO\Desktop\Espe\Trabajo Dirigido\TABLAMONEDA.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pair"
+              DTS:DTSID="{5DD422D7-D0E7-4C20-9E53-DEEF763781D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="From_Currency"
+              DTS:DTSID="{F7F03AFF-10B5-4A43-BAA1-7919373C767E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="To_Currency"
+              DTS:DTSID="{0E606561-D032-46A3-AD91-A7D0DB8D8A01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{A08F1765-D3C7-488F-92DB-3F15FB521283}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{8FAF7517-8198-4F7B-9285-4F22BF96A46E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Open"
+              DTS:DTSID="{BD6183F9-A0F2-4607-A4CB-1EC75F3FD4A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="High"
+              DTS:DTSID="{12FF1068-475B-4A60-9DEE-089413844846}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Low"
+              DTS:DTSID="{393FA63E-4466-449D-89C8-1280DE627E49}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vol"
+              DTS:DTSID="{2B2B55F5-569E-4B41-8D5B-C80D068AC2CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Change %"
+              DTS:DTSID="{456786DB-2081-4E10-A898-FB5847A306AB}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -519,7 +739,7 @@
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="1033"
+              localeId="9226"
               name="Flat File Source"
               usesDispositions="true"
               version="1">
@@ -536,8 +756,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerID="{A84A6EA7-2762-4A0E-A0D3-B2996B858630}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Ruta Jonh]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -722,15 +942,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Vol ]"
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Change %]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vol ]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Change %]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Vol ]"
-                      name="Vol "
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Change %]"
+                      name="Change %"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -744,15 +964,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Change %]"
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Vol ]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Change %]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vol ]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Change %]"
-                      name="Change %"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Vol ]"
+                      name="Vol "
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -817,17 +1037,17 @@
                       length="50"
                       name="Low" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vol ]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Vol " />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Change %]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Change %" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vol ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vol " />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1124,9 +1344,9 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151.111111111112,41.7777777777778"
+          Size="150.666666666667,41.7777777777778"
           Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="257.916656417979,26.0000008550184" />
+          TopLeft="257.916656417979,27.793104362261" />
         <NodeLayout
           Size="170.666666666667,41.7777777777778"
           Id="Package\Data Flow Task\OLE DB Destination"
@@ -1134,21 +1354,21 @@
         <NodeLayout
           Size="156,41.7777777777778"
           Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="255.83332316743,110.275865695422" />
+          TopLeft="256.24998981754,108.93103806499" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="333.541656459371,67.7777786327962">
+          TopLeft="333.749989784426,69.5708821400388">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.4980870626262"
+              EndConnector="0,39.3601559249512"
               Start="0,0"
-              End="0,34.9980870626262">
+              End="0,31.8601559249512">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.9980870626262" />
+                    End="0,31.8601559249512" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1159,18 +1379,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="336.291657005747,152.0536434732">
+          TopLeft="336.499990330802,150.708815842768">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.6360177727922"
+              EndConnector="0,33.9808454032242"
               Start="0,0"
-              End="0,25.1360177727922">
+              End="0,26.4808454032242">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.1360177727922" />
+                    End="0,26.4808454032242" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
