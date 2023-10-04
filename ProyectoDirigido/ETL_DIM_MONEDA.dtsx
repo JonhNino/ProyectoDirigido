@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{6AD52C73-1C99-4F80-A750-749B19FE0FE6}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{33BC1BD5-FE9B-4DC5-A77B-9EEE289EF28A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -281,14 +281,14 @@
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT SK_DIM_MONEDA,CONCAT(STR_NOMBRE_MONEDA_ORIGEN, STR_NOMBRE_MONEDA_DESTINO) AS LLAVE
-FROM [PROBODEGA].[dbo].[TBL_DIM_MONEDA_T0];</property>
+FROM [Proyecto].[dbo].[TBL_DIM_MONEDA_T0];</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT SK_DIM_MONEDA,CONCAT(STR_NOMBRE_MONEDA_ORIGEN, STR_NOMBRE_MONEDA_DESTINO) AS LLAVE
-FROM [PROBODEGA].[dbo].[TBL_DIM_MONEDA_T0];) [refTable]
+FROM [Proyecto].[dbo].[TBL_DIM_MONEDA_T0];) [refTable]
 where [refTable].[LLAVE] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -338,8 +338,8 @@ where [refTable].[LLAVE] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA 1]"
+                  connectionManagerID="{6E622B5C-E00A-480F-8434-3A1B37E34549}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-LSG58H1_SQLSERVER.Proyecto]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -486,8 +486,8 @@ where [refTable].[LLAVE] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
+                  connectionManagerID="{6E622B5C-E00A-480F-8434-3A1B37E34549}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-LSG58H1_SQLSERVER.Proyecto]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -595,7 +595,7 @@ where [refTable].[LLAVE] = ?</property>
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT distinct [From_Currency]
       ,[To_Currency]
-FROM [PROBODEGA].[dbo].[CurrencyExchange]</property>
+FROM [Proyecto].[dbo].[CurrencyExchange]</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -621,8 +621,8 @@ FROM [PROBODEGA].[dbo].[CurrencyExchange]</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
+                  connectionManagerID="{6E622B5C-E00A-480F-8434-3A1B37E34549}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-LSG58H1_SQLSERVER.Proyecto]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -774,7 +774,7 @@ FROM [PROBODEGA].[dbo].[CurrencyExchange]</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="151,42"
+          Size="151.111111111112,41.7777777777778"
           Id="Package\Data Flow Task"
           TopLeft="140.499994635582,75.4310367824632" />
       </GraphLayout>
@@ -786,27 +786,27 @@ FROM [PROBODEGA].[dbo].[CurrencyExchange]</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="153,42"
+          Size="152.888888888889,41.7777777777778"
           Id="Package\Data Flow Task\Derived Column"
           TopLeft="308.333321081268,117.448279724393" />
         <NodeLayout
-          Size="130,42"
+          Size="129.777777777778,41.7777777777778"
           Id="Package\Data Flow Task\Row Count"
           TopLeft="514.999979535739,264.647513779927" />
         <NodeLayout
-          Size="171,42"
+          Size="171.111111111112,41.7777777777778"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="305.416654530499,344.896558593768" />
         <NodeLayout
-          Size="113,42"
+          Size="112.888888888889,41.7777777777778"
           Id="Package\Data Flow Task\Lookup"
           TopLeft="328.749986936649,190.068971767721" />
         <NodeLayout
-          Size="150,42"
+          Size="150.222222222223,41.7777777777778"
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="310.833320981927,44.8275876810662" />
         <NodeLayout
-          Size="164,42"
+          Size="164,41.7777777777778"
           Id="Package\Data Flow Task\Conditional Split 1"
           TopLeft="306.666654480829,270.436789274877" />
         <EdgeLayout
@@ -852,7 +852,9 @@ FROM [PROBODEGA].[dbo].[CurrencyExchange]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,3.67145713277475,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -875,7 +877,7 @@ FROM [PROBODEGA].[dbo].[CurrencyExchange]</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.28146484375,4.59099577055656,32.825625,9.5732421875"
+              BoundingBox="-25.28146484375,4.59099577055656,50.5629296875,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -899,7 +901,7 @@ FROM [PROBODEGA].[dbo].[CurrencyExchange]</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-57.0600390625,7.54501986468955,96.3827734375,11.609375"
+              BoundingBox="-57.0600390625,7.54501986468955,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -922,7 +924,9 @@ FROM [PROBODEGA].[dbo].[CurrencyExchange]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,3.6714571327747,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

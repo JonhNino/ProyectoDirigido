@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{824CE2FA-4000-4C98-B92B-005B8BA95F4C}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{65FEECC3-CE05-47EC-A80C-1CEE55FF65B0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -303,7 +303,7 @@
 	SK_DIM_TIEMPO,
 	CAST(DT_FECHA AS nvarchar) 
 	AS LLAVE 
-	FROM [PROBODEGA].[dbo].[TBL_DIM_TIEMPO_T0]</property>
+	FROM [Proyecto].[dbo].[TBL_DIM_TIEMPO_T0]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
@@ -313,7 +313,7 @@
 	SK_DIM_TIEMPO,
 	CAST(DT_FECHA AS nvarchar) 
 	AS LLAVE 
-	FROM [PROBODEGA].[dbo].[TBL_DIM_TIEMPO_T0]) [refTable]
+	FROM [Proyecto].[dbo].[TBL_DIM_TIEMPO_T0]) [refTable]
 where [refTable].[LLAVE] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -363,8 +363,8 @@ where [refTable].[LLAVE] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
+                  connectionManagerID="{6E622B5C-E00A-480F-8434-3A1B37E34549}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-LSG58H1_SQLSERVER.Proyecto]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -511,8 +511,8 @@ where [refTable].[LLAVE] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
+                  connectionManagerID="{6E622B5C-E00A-480F-8434-3A1B37E34549}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-LSG58H1_SQLSERVER.Proyecto]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -732,8 +732,8 @@ FROM CurrencyExchange order by 1;</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RERBLR8\SQLSERVER.PROBODEGA]"
+                  connectionManagerID="{6E622B5C-E00A-480F-8434-3A1B37E34549}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-LSG58H1_SQLSERVER.Proyecto]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1026,7 +1026,7 @@ FROM CurrencyExchange order by 1;</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="151,42"
+          Size="151.111111111112,41.7777777777778"
           Id="Package\Data Flow Task"
           TopLeft="262.083322919078,60.0689674926286" />
       </GraphLayout>
@@ -1038,27 +1038,27 @@ FROM CurrencyExchange order by 1;</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="113,42"
+          Size="112.888888888889,41.7777777777778"
           Id="Package\Data Flow Task\Lookup"
           TopLeft="373.3333184984,167.206902050377" />
         <NodeLayout
-          Size="153,42"
+          Size="152.888888888889,41.7777777777778"
           Id="Package\Data Flow Task\Derived Column"
           TopLeft="358.333319094447,96.8275893911029" />
         <NodeLayout
-          Size="130,42"
+          Size="129.777777777778,41.7777777777778"
           Id="Package\Data Flow Task\Row Count"
           TopLeft="585.416643404299,238.873567434516" />
         <NodeLayout
-          Size="150,42"
+          Size="150.222222222223,41.7777777777778"
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="362.916652245654,27.3448284854504" />
         <NodeLayout
-          Size="171,42"
+          Size="171.111111111112,41.7777777777778"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="349.16665279203,337.206902905395" />
         <NodeLayout
-          Size="155,42"
+          Size="155.111111111112,41.7777777777778"
           Id="Package\Data Flow Task\Conditional Split"
           TopLeft="354.999985893568,246.2413862242" />
         <EdgeLayout
