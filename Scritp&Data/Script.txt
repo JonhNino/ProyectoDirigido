@@ -1,0 +1,174 @@
+/******Dimension CurrencyExchange ******/
+CREATE TABLE CurrencyExchange (
+    Pair NVARCHAR(50),
+    From_Currency NVARCHAR(50),
+    To_Currency NVARCHAR(50),
+    Date1 NVARCHAR(50),
+    Price NVARCHAR(50),
+    Open1 NVARCHAR(50),
+    High1 NVARCHAR(50),
+    Low1 NVARCHAR(50),
+    Vol NVARCHAR(50),
+    Change_Percentage NVARCHAR(50)
+);
+
+/******Dimension Dim Tiempo ******/
+CREATE TABLE [dbo].[TBL_DIM_TIEMPO_T0](
+	[SK_DIM_TIEMPO] [bigint] PRIMARY KEY,
+	[DT_FECHA] [datetime] NULL,
+	[NUM_ANIO] [int] NULL,
+	[STR_SEMESTRE] [varchar](20) NULL,
+	[NUM_PERIODO] [int] NULL,
+	[STR_MES] [varchar](20) NULL,
+	[NUM_MES] [int] NULL,
+	[NUM_DIA] [int] NULL,
+	[NUM_SEMANA_MES] [int] NULL
+);
+
+/******Dimension Moneda ******/
+CREATE TABLE TBL_DIM_MONEDA_T0 (
+    SK_DIM_MONEDA INT IDENTITY(1,1) PRIMARY KEY,
+    STR_NOMBRE_MONEDA_ORIGEN NVARCHAR(100) ,
+	STR_NOMBRE_MONEDA_DESTINO NVARCHAR(100) ,
+	DT_FECHA_ACTUALIZACION DATETIME
+);
+
+/******Dimension Transaccion ******/
+CREATE TABLE TBL_DIM_TRANSACCION_T0 (
+    SK_DIM_TRANSACCION INT IDENTITY(1,1) PRIMARY KEY,
+    STR_PAIR NVARCHAR(100) ,
+	STR_PRICE NVARCHAR(100) ,
+	STR_OPEN NVARCHAR(100) ,
+	STR_HIGH NVARCHAR(100) ,
+	STR_LOW NVARCHAR(100) ,
+	STR_VOL NVARCHAR(100) ,
+	STR_CHANGE NVARCHAR(100) ,
+	DT_FECHA_ACTUALIZACION DATETIME
+);
+
+
+/*Dimension en VB */
+/*Cargue DATA*/
+SELECT distinct [From_Currency]
+      ,[To_Currency]
+FROM [Proyecto].[dbo].[CurrencyExchange]
+
+/*Lookup*/
+SELECT SK_DIM_MONEDA,CONCAT(STR_NOMBRE_MONEDA_ORIGEN, STR_NOMBRE_MONEDA_DESTINO) AS LLAVE
+FROM [Proyecto].[dbo].[TBL_DIM_MONEDA_T0];
+
+
+
+/*Dimension en VB */
+/*Cargue DATA*/
+SELECT distinct [Pair]
+	  ,[Price]
+	  ,[Open1]
+	  ,[High1]
+	  ,[Low1]
+	  ,[Vol]
+	  ,[Change_Percentage]
+FROM [Proyecto].[dbo].[CurrencyExchange]
+
+/*Lookup*/
+SELECT SK_DIM_TRANSACCION,
+	CONCAT(STR_PAIR, STR_PRICE, STR_OPEN,STR_HIGH,STR_LOW,STR_VOL,STR_CHANGE) AS LLAVE
+FROM [Proyecto].[dbo].[TBL_DIM_TRANSACCION_T0]
+
+
+/*Dimension en VB */
+/*Cargue DATA*/
+SELECT distinct 
+	concat(DATEPART(YEAR,Date1),
+	CASE 
+        WHEN DATEPART(MONTH,Date1) <= 9 THEN concat( '0' ,DATEPART(MONTH,Date1))
+        ELSE cast(DATEPART(MONTH,Date1) as varchar)
+    END,
+	CASE 
+        WHEN DATEPART(DAY,Date1) <= 9 THEN concat( '0' ,DATEPART(DAY,Date1))
+        ELSE cast(DATEPART(DAY,Date1) as varchar)
+    END) as SK_DIM_TIEMPO,
+	 cast(Date1 as date) as DT_FECHA
+	 ,DATEPART(YEAR,Date1) as NUM_ANIO
+	 ,CASE 
+        WHEN DATEPART(MONTH,Date1) <= 6 THEN 'PRIMER SEMESTRE'
+        ELSE 'SEGUNDO SEMESTRE'
+    END as STR_SEMESTRE,
+	concat(DATEPART(YEAR,Date1),
+	CASE 
+        WHEN DATEPART(MONTH,Date1) <= 9 THEN concat( '0' ,DATEPART(MONTH,Date1))
+        ELSE cast(DATEPART(MONTH,Date1) as varchar)
+    END) as NUM_PERIODO,
+	LEFT(UPPER(DATENAME(MONTH, Date1)), 3) as STR_MES,
+	DATEPART(MONTH, Date1) as NUM_MES,
+	DATEPART(DAY, Date1) as NUM_DIA,
+	DATEPART(ISO_WEEK, Date1) AS NUM_SEMANA
+FROM CurrencyExchange order by 1;
+
+/*Lookup*/
+SELECT 
+	SK_DIM_TIEMPO,
+	CAST(DT_FECHA AS nvarchar) 
+	AS LLAVE 
+	FROM [dbo].[TBL_DIM_TIEMPO_T0]
+****************************************************
+****************************************************
+/*TABLA HECHOS*/
+CREATE TABLE [Proyecto].[dbo].[TBL_FACT_DIVISAS] (
+    SK_DIM_TIEMPO BIGINT,
+    MONEDA NVARCHAR(100),
+    TRANSACCION NVARCHAR(500),
+    PRECIO FLOAT,
+    APERTURA FLOAT,
+    MAXIMO FLOAT,
+    MINIMO FLOAT,
+    VOLUMEN FLOAT,
+    CAMBIO_PORCENTAJE FLOAT,
+	FECHA_CARGUE  DATETIME
+);
+
+/*OLE DB SOURCE*/
+SELECT TOP (10000000)
+    FORMAT(convert(date, CE.Date1),'yyyyMMdd') AS SK_DIM_TIEMPO,
+    TRIM(CONCAT(CE.From_Currency, CE.To_Currency)) AS MONEDA,
+    TRIM(CONCAT(CE.Pair, CE.Price, CE.Open1, CE.High1, CE.Low1, CE.Vol, CE.Change_Percentage)) AS TRANSACCION,
+    CE.Price AS PRECIO,
+    CE.Open1 AS APERTURA,
+    CE.High1 AS MAXIMO,
+    CE.Low1 AS MINIMO,
+    Try_CAST(CE.Vol as float)AS VOLUMEN,
+    Try_CAST(CE.Change_Percentage as float) AS CAMBIO_PORCENTAJE    
+FROM [Proyecto].[dbo].[CurrencyExchange] CE;
+
+
+///// Limpieza datos 
+UPDATE [Proyecto].[dbo].[CurrencyExchange]
+SET Change_Percentage = REPLACE(Change_Percentage, '%', '')
+WHERE CHARINDEX('%', Change_Percentage) > 0;
+
+UPDATE [Proyecto].[dbo].[CurrencyExchange]
+SET Change_Percentage = REPLACE(Change_Percentage, ';', '')
+WHERE CHARINDEX(';', Change_Percentage) > 0;
+
+
+//// 
+delete from [Proyecto].[dbo].[CurrencyExchange];
+Select * from [Proyecto].[dbo].[CurrencyExchange];
+
+delete from [Proyecto].[dbo].[TBL_DIM_MONEDA_T0];
+Select * from [Proyecto].[dbo].[TBL_DIM_MONEDA_T0];
+
+delete from [Proyecto].[dbo].[TBL_DIM_TIEMPO_T0];
+Select * from [Proyecto].[dbo].[TBL_DIM_TIEMPO_T0];
+
+delete from [Proyecto].[dbo].[TBL_DIM_TRANSACCION_T0];
+Select * from [Proyecto].[dbo].[TBL_DIM_TRANSACCION_T0];
+
+delete from [Proyecto].[dbo].[TBL_FACT_DIVISAS];
+Select * from [Proyecto].[dbo].[TBL_FACT_DIVISAS];
+
+
+
+
+
+
