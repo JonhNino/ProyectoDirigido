@@ -169,6 +169,160 @@ Select * from [Proyecto].[dbo].[TBL_FACT_DIVISAS];
 
 
 
+//////////////////////////////////
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (100000) [Pair]
+      ,[From_Currency]
+      ,[To_Currency]
+      ,[Date1]
+      ,[Price]
+      ,[Open1]
+      ,[High1]
+      ,[Low1]
+      ,[Vol]
+      ,[Change_Percentage]
+  FROM [Proyecto].[dbo].[CurrencyExchange]
+
+
+  SELECT Pair, SUM(Vol) as Total_Volume
+FROM CurrencyExchange
+GROUP BY Pair;
+
+
+///// Limpieza datos 
+UPDATE [Proyecto].[dbo].[CurrencyExchange]
+SET Change_Percentage = REPLACE(Change_Percentage, '%', '')
+WHERE CHARINDEX('%', Change_Percentage) > 0;
+
+UPDATE [Proyecto].[dbo].[CurrencyExchange]
+SET Change_Percentage = REPLACE(Change_Percentage, ';', '')
+WHERE CHARINDEX(';', Change_Percentage) > 0;
+
+///// Limpieza datos 
+UPDATE [Proyecto].[dbo].[TBL_DIM_TRANSACCION_T0]
+SET STR_CHANGE = REPLACE(STR_CHANGE, '%', '')
+WHERE CHARINDEX('%', STR_CHANGE) > 0;
+
+UPDATE [Proyecto].[dbo].[TBL_DIM_TRANSACCION_T0]
+SET STR_CHANGE = REPLACE(STR_CHANGE, ';', '')
+WHERE CHARINDEX(';', STR_CHANGE) > 0;
+
+UPDATE [Proyecto].[dbo].[TBL_FACT_DIVISAS]
+SET CAMBIO_PORCENTAJE = REPLACE(CAMBIO_PORCENTAJE, '%', '')
+WHERE CHARINDEX('%', CAMBIO_PORCENTAJE) > 0;
+
+UPDATE [Proyecto].[dbo].[TBL_FACT_DIVISAS]
+SET CAMBIO_PORCENTAJE = REPLACE(CAMBIO_PORCENTAJE, ';', '')
+WHERE CHARINDEX(';', CAMBIO_PORCENTAJE) > 0;
+
+
+delete from [Proyecto].[dbo].[CurrencyExchange];
+SELECT * FROM [Proyecto].[dbo].[CurrencyExchange] WHERE Pair = 'VES_USD' AND price like 100;
+
+
+delete from [Proyecto].[dbo].[TBL_DIM_MONEDA_T0];
+Select * from [Proyecto].[dbo].[TBL_DIM_MONEDA_T0];
+
+delete from [Proyecto].[dbo].[TBL_DIM_TIEMPO_T0];
+Select * from [Proyecto].[dbo].[TBL_DIM_TIEMPO_T0];
+
+delete from [Proyecto].[dbo].[TBL_DIM_TRANSACCION_T0];
+Select * from [Proyecto].[dbo].[TBL_DIM_TRANSACCION_T0];
+
+delete from [Proyecto].[dbo].[TBL_FACT_DIVISAS];
+Select * from [Proyecto].[dbo].[TBL_FACT_DIVISAS] where MONEDA ='VESUSD';
+
+UPDATE [Proyecto].[dbo].[TBL_FACT_DIVISAS]
+SET TRANSACCION= REPLACE(TRANSACCION, '%', '')
+WHERE CHARINDEX('%', TRANSACCION) > 0;
+
+UPDATE [Proyecto].[dbo].[TBL_FACT_DIVISAS]
+SET TRANSACCION = REPLACE(TRANSACCION, ';', '')
+WHERE CHARINDEX(';', TRANSACCION) > 0;
+
+UPDATE [Proyecto].[dbo].[CurrencyExchange]
+SET Change_Percentage = REPLACE(Change_Percentage, '%', '')
+WHERE CHARINDEX('%', Change_Percentage) > 0;
+
+UPDATE [Proyecto].[dbo].[CurrencyExchange]
+SET Change_Percentage = REPLACE(Change_Percentage, ';', '')
+WHERE CHARINDEX(';', Change_Percentage) > 0;
+
+SELECT TOP (10000000)
+    FORMAT(convert(date, CE.Date1),'yyyyMMdd') AS SK_DIM_TIEMPO,
+    REPLACE(TRIM(CONCAT(CE.From_Currency, CE.To_Currency)), ',', '.') AS MONEDA,
+    REPLACE(TRIM(CONCAT(CE.Pair, CE.Price, CE.Open1, CE.High1, CE.Low1, CE.Vol, CE.Change_Percentage)), ',', '.') AS TRANSACCION,
+    REPLACE(CE.Price, ',', '.') AS PRECIO,
+    REPLACE(CE.Open1, ',', '.') AS APERTURA,
+    REPLACE(CE.High1, ',', '.') AS MAXIMO,
+    REPLACE(CE.Low1, ',', '.') AS MINIMO,
+    Try_CAST(REPLACE(CE.Vol, ',', '.') as float) AS VOLUMEN,
+    Try_CAST(REPLACE(CE.Change_Percentage, ',', '.') as float) AS CAMBIO_PORCENTAJE    
+FROM [Proyecto].[dbo].[CurrencyExchange] CE;
+
+
+SELECT SK_DIM_TRANSACCION,
+	REPLACE(TRIM(CONCAT(STR_PAIR, STR_PRICE, STR_OPEN,STR_HIGH,STR_LOW,STR_VOL,STR_CHANGE)), ',', '.') AS LLAVE
+FROM [Proyecto].[dbo].[TBL_DIM_TRANSACCION_T0];
+
+
+SELECT * FROM [Proyecto].[dbo].[CurrencyExchange] 
+WHERE Pair = 'VES_USD' AND (
+    price LIKE '100,%' OR price LIKE '101,%' OR price LIKE '102,%' OR price LIKE '103,%' OR 
+    price LIKE '104,%' OR price LIKE '105,%' OR price LIKE '106,%' OR price LIKE '107,%' OR 
+    price LIKE '108,%' OR price LIKE '109,%' OR price LIKE '110,%' OR price LIKE '111,%' OR 
+    price LIKE '112,%' OR price LIKE '113,%' OR price LIKE '114,%' OR price LIKE '115,%' OR 
+    price LIKE '116,%' OR price LIKE '117,%' OR price LIKE '118,%' OR price LIKE '119,%' OR 
+    price LIKE '120,%' OR price LIKE '121,%' OR price LIKE '122,%' OR price LIKE '123,%' OR 
+    price LIKE '124,%' OR price LIKE '125,%' OR price LIKE '126,%' OR price LIKE '127,%' OR 
+    price LIKE '128,%' OR price LIKE '129,%' OR price LIKE '130,%' OR price LIKE '131,%' OR 
+    price LIKE '132,%' OR price LIKE '133,%' OR price LIKE '134,%' OR price LIKE '135,%' OR 
+    price LIKE '136,%' OR price LIKE '137,%' OR price LIKE '138,%' OR price LIKE '139,%' OR 
+    price LIKE '140,%' OR price LIKE '141,%' OR price LIKE '142,%' OR price LIKE '143,%' OR 
+    price LIKE '144,%' OR price LIKE '145,%' OR price LIKE '146,%' OR price LIKE '147,%' OR 
+    price LIKE '148,%' OR price LIKE '149,%' OR price LIKE '150,%' OR price LIKE '151,%' OR 
+    price LIKE '152,%' OR price LIKE '153,%' OR price LIKE '154,%' OR price LIKE '155,%' OR 
+    price LIKE '156,%' OR price LIKE '157,%' OR price LIKE '158,%' OR price LIKE '159,%' OR 
+    price LIKE '160,%' OR price LIKE '161,%' OR price LIKE '162,%' OR price LIKE '163,%' OR 
+    price LIKE '164,%' OR price LIKE '165,%' OR price LIKE '166,%' OR price LIKE '167,%' OR 
+    price LIKE '168,%' OR price LIKE '169,%' OR price LIKE '170,%' OR price LIKE '171,%' OR 
+    price LIKE '172,%' OR price LIKE '173,%' OR price LIKE '174,%' OR price LIKE '175,%' OR 
+    price LIKE '176,%' OR price LIKE '177,%' OR price LIKE '178,%' OR price LIKE '179,%' OR 
+    price LIKE '180,%' OR price LIKE '181,%' OR price LIKE '182,%' OR price LIKE '183,%' OR 
+    price LIKE '184,%' OR price LIKE '185,%' OR price LIKE '186,%' OR price LIKE '187,%' OR 
+    price LIKE '188,%' OR price LIKE '189,%' OR price LIKE '190,%' OR price LIKE '191,%' OR 
+    price LIKE '192,%' OR price LIKE '193,%' OR price LIKE '194,%' OR price LIKE '195,%' OR 
+    price LIKE '196,%' OR price LIKE '197,%' OR price LIKE '198,%' OR price LIKE '199,%');
+
+	UPDATE [Proyecto].[dbo].[CurrencyExchange]
+SET price = STUFF(Open1, 1, 3, CAST(CAST(SUBSTRING(price, 1, 3) AS INT) - 99 AS VARCHAR) + ',')
+WHERE Pair = 'VES_USD' AND Open1 LIKE '[1][0-9][0-9],%';
+
+delete from [Proyecto].[dbo].[CurrencyExchange];
+SELECT * FROM [Proyecto].[dbo].[CurrencyExchange] WHERE Pair = 'VES_USD' AND price like 100;
+
+
+UPDATE [Proyecto].[dbo].[CurrencyExchange]
+SET Price = 
+    '1,' + LEFT(Price, 3) + REPLACE(SUBSTRING(Price, 5, LEN(Price) - 4), ',', '')
+WHERE Pair = 'VES_USD' AND Price LIKE '[1][0-9][0-9],%';
+
+UPDATE [Proyecto].[dbo].[CurrencyExchange]
+SET Open1 = 
+    '1,' + LEFT(Open1, 3) + REPLACE(SUBSTRING(Open1, 5, LEN(Open1) - 4), ',', '')
+WHERE Pair = 'VES_USD' AND Open1 LIKE '[1][0-9][0-9],%';
+
+UPDATE [Proyecto].[dbo].[CurrencyExchange]
+SET Low1 = 
+    '1,' + LEFT(Low1, 3) + REPLACE(SUBSTRING(Low1, 5, LEN(Low1) - 4), ',', '')
+WHERE Pair = 'VES_USD' AND Low1 LIKE '[1][0-9][0-9],%';
+
+UPDATE [Proyecto].[dbo].[CurrencyExchange]
+SET High1 = 
+    '1,' + LEFT(High1, 3) + REPLACE(SUBSTRING(High1, 5, LEN(High1) - 4), ',', '')
+WHERE Pair = 'VES_USD' AND High1 LIKE '[1][0-9][0-9],%';
+
+
 
 
 

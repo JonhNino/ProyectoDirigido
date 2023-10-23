@@ -1,0 +1,6 @@
+<!-- send_email.html -->
+<form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.email.label }}: {{ form.email() }}<br>
+    {{ form.submit() }}
+</form>
