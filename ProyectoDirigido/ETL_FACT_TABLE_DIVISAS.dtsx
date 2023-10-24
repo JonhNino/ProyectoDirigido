@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{381A3021-6DD3-4657-ACB0-E064B25B5B1C}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{29C668DD-4DCC-4016-9D0A-D4CAF7D3F286}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -116,134 +116,140 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[PRECIO]"
-                      dataType="i4"
+                      dataType="decimal"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[PRECIO]"
                       name="PRECIO"
+                      scale="5"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_I4)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRECIO]}</property>
+                          name="Expression">(DT_DECIMAL,5)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRECIO]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_I4)PRECIO</property>
+                          name="FriendlyExpression">(DT_DECIMAL,5)PRECIO</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[APERTURA]"
-                      dataType="i4"
+                      dataType="decimal"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[APERTURA]"
                       name="APERTURA"
+                      scale="5"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_I4)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[APERTURA]}</property>
+                          name="Expression">(DT_DECIMAL,5)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[APERTURA]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_I4)APERTURA</property>
+                          name="FriendlyExpression">(DT_DECIMAL,5)APERTURA</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MAXIMO]"
-                      dataType="i4"
+                      dataType="decimal"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MAXIMO]"
                       name="MAXIMO"
+                      scale="5"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_I4)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MAXIMO]}</property>
+                          name="Expression">(DT_DECIMAL,5)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MAXIMO]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_I4)MAXIMO</property>
+                          name="FriendlyExpression">(DT_DECIMAL,5)MAXIMO</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MINIMO]"
-                      dataType="i4"
+                      dataType="decimal"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MINIMO]"
                       name="MINIMO"
+                      scale="5"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_I4)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MINIMO]}</property>
+                          name="Expression">(DT_DECIMAL,5)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MINIMO]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_I4)MINIMO</property>
+                          name="FriendlyExpression">(DT_DECIMAL,5)MINIMO</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[VOLUMEN]"
-                      dataType="i4"
+                      dataType="decimal"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[VOLUMEN]"
                       name="VOLUMEN"
+                      scale="5"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_I4)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[VOLUMEN]}</property>
+                          name="Expression">(DT_DECIMAL,5)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[VOLUMEN]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_I4)VOLUMEN</property>
+                          name="FriendlyExpression">(DT_DECIMAL,5)VOLUMEN</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[CAMBIO_PORCENTAJE]"
-                      dataType="i4"
+                      dataType="decimal"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[CAMBIO_PORCENTAJE]"
                       name="CAMBIO_PORCENTAJE"
+                      scale="5"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_I4)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAMBIO_PORCENTAJE]}</property>
+                          name="Expression">(DT_DECIMAL,5)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAMBIO_PORCENTAJE]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_I4)CAMBIO_PORCENTAJE</property>
+                          name="FriendlyExpression">(DT_DECIMAL,5)CAMBIO_PORCENTAJE</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -698,38 +704,44 @@ where [refTable].[LLAVE] = ?</property>
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[CONV_SK_DIM_TIEMPO]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRECIO]"
-                      cachedDataType="i4"
+                      cachedDataType="decimal"
                       cachedName="PRECIO"
+                      cachedScale="5"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRECIO]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[PRECIO]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[APERTURA]"
-                      cachedDataType="i4"
+                      cachedDataType="decimal"
                       cachedName="APERTURA"
+                      cachedScale="5"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[APERTURA]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[APERTURA]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MAXIMO]"
-                      cachedDataType="i4"
+                      cachedDataType="decimal"
                       cachedName="MAXIMO"
+                      cachedScale="5"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MAXIMO]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MAXIMO]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MINIMO]"
-                      cachedDataType="i4"
+                      cachedDataType="decimal"
                       cachedName="MINIMO"
+                      cachedScale="5"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MINIMO]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MINIMO]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[VOLUMEN]"
-                      cachedDataType="i4"
+                      cachedDataType="decimal"
                       cachedName="VOLUMEN"
+                      cachedScale="5"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMEN]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[VOLUMEN]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CAMBIO_PORCENTAJE]"
-                      cachedDataType="i4"
+                      cachedDataType="decimal"
                       cachedName="CAMBIO_PORCENTAJE"
+                      cachedScale="5"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CAMBIO_PORCENTAJE]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[CAMBIO_PORCENTAJE]" />
                     <inputColumn
@@ -854,10 +866,10 @@ where [refTable].[LLAVE] = ?</property>
     FORMAT(convert(date, CE.Date1),'yyyyMMdd') AS SK_DIM_TIEMPO,
     TRIM(CONCAT(CE.From_Currency, CE.To_Currency)) AS MONEDA,
     TRIM(CONCAT(CE.Pair, CE.Price, CE.Open1, CE.High1, CE.Low1, CE.Vol, CE.Change_Percentage)) AS TRANSACCION,
-    CE.Price AS PRECIO,
-    CE.Open1 AS APERTURA,
-    CE.High1 AS MAXIMO,
-    CE.Low1 AS MINIMO,
+    ISNULL(Try_CAST(REPLACE(CE.Price, ',', '.') as float), 0) AS PRECIO,
+    ISNULL(Try_CAST(REPLACE(CE.Open1, ',', '.') as float), 0) AS APERTURA,
+    ISNULL(Try_CAST(REPLACE(CE.High1, ',', '.') as float), 0) AS MAXIMO,
+    ISNULL(Try_CAST(REPLACE(CE.Low1, ',', '.') as float), 0) AS MINIMO,
 	ISNULL(Try_CAST(REPLACE(CE.Vol, ',', '.') as float), 0) AS VOLUMEN,
     ISNULL(Try_CAST(REPLACE(CE.Change_Percentage, ',', '.') as float), 0) AS CAMBIO_PORCENTAJE   
 FROM [Proyecto].[dbo].[CurrencyExchange] CE;</property>
@@ -1000,23 +1012,19 @@ FROM [Proyecto].[dbo].[CurrencyExchange] CE;</property>
                       name="TRANSACCION" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRECIO]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="r8"
                       name="PRECIO" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[APERTURA]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="r8"
                       name="APERTURA" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MAXIMO]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="r8"
                       name="MAXIMO" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MINIMO]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="r8"
                       name="MINIMO" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VOLUMEN]"
@@ -1053,26 +1061,22 @@ FROM [Proyecto].[dbo].[CurrencyExchange] CE;</property>
                       name="TRANSACCION" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRECIO]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="r8"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRECIO]"
                       name="PRECIO" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[APERTURA]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="r8"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[APERTURA]"
                       name="APERTURA" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MAXIMO]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="r8"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MAXIMO]"
                       name="MAXIMO" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MINIMO]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="r8"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MINIMO]"
                       name="MINIMO" />
                     <outputColumn
@@ -1175,7 +1179,7 @@ FROM [Proyecto].[dbo].[CurrencyExchange] CE;</property>
           TopLeft="334.999986688297,87.8620718548897" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="413.069431041678,57.0191575893403">
+          TopLeft="413.069431041679,57.0191575893403">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1245,7 +1249,7 @@ FROM [Proyecto].[dbo].[CurrencyExchange] CE;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="415.361097815964,129.639849632667">
+          TopLeft="415.361097815965,129.639849632667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

@@ -250,15 +250,16 @@ WHERE CHARINDEX(';', Change_Percentage) > 0;
 
 SELECT TOP (10000000)
     FORMAT(convert(date, CE.Date1),'yyyyMMdd') AS SK_DIM_TIEMPO,
-    REPLACE(TRIM(CONCAT(CE.From_Currency, CE.To_Currency)), ',', '.') AS MONEDA,
-    REPLACE(TRIM(CONCAT(CE.Pair, CE.Price, CE.Open1, CE.High1, CE.Low1, CE.Vol, CE.Change_Percentage)), ',', '.') AS TRANSACCION,
-    REPLACE(CE.Price, ',', '.') AS PRECIO,
-    REPLACE(CE.Open1, ',', '.') AS APERTURA,
-    REPLACE(CE.High1, ',', '.') AS MAXIMO,
-    REPLACE(CE.Low1, ',', '.') AS MINIMO,
-    Try_CAST(REPLACE(CE.Vol, ',', '.') as float) AS VOLUMEN,
-    Try_CAST(REPLACE(CE.Change_Percentage, ',', '.') as float) AS CAMBIO_PORCENTAJE    
+    TRIM(CONCAT(CE.From_Currency, CE.To_Currency)) AS MONEDA,
+    TRIM(CONCAT(CE.Pair, CE.Price, CE.Open1, CE.High1, CE.Low1, CE.Vol, CE.Change_Percentage)) AS TRANSACCION,
+    ISNULL(Try_CAST(REPLACE(CE.Price, ',', '.') as float), 0) AS PRECIO,
+    ISNULL(Try_CAST(REPLACE(CE.Open1, ',', '.') as float), 0) AS APERTURA,
+    ISNULL(Try_CAST(REPLACE(CE.High1, ',', '.') as float), 0) AS MAXIMO,
+    ISNULL(Try_CAST(REPLACE(CE.Low1, ',', '.') as float), 0) AS MINIMO,
+	ISNULL(Try_CAST(REPLACE(CE.Vol, ',', '.') as float), 0) AS VOLUMEN,
+    ISNULL(Try_CAST(REPLACE(CE.Change_Percentage, ',', '.') as float), 0) AS CAMBIO_PORCENTAJE   
 FROM [Proyecto].[dbo].[CurrencyExchange] CE;
+
 
 
 SELECT SK_DIM_TRANSACCION,
