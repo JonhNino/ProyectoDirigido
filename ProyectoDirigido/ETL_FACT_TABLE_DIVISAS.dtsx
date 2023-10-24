@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{373AB1B6-40E0-4915-BFAF-1A2363A0C3FF}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{381A3021-6DD3-4657-ACB0-E064B25B5B1C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -858,8 +858,8 @@ where [refTable].[LLAVE] = ?</property>
     CE.Open1 AS APERTURA,
     CE.High1 AS MAXIMO,
     CE.Low1 AS MINIMO,
-	Try_CAST(CE.Vol as float)AS VOLUMEN,
-    Try_CAST(CE.Change_Percentage as float) AS CAMBIO_PORCENTAJE    
+	ISNULL(Try_CAST(REPLACE(CE.Vol, ',', '.') as float), 0) AS VOLUMEN,
+    ISNULL(Try_CAST(REPLACE(CE.Change_Percentage, ',', '.') as float), 0) AS CAMBIO_PORCENTAJE   
 FROM [Proyecto].[dbo].[CurrencyExchange] CE;</property>
                 <property
                   dataType="System.String"
@@ -1215,7 +1215,7 @@ FROM [Proyecto].[dbo].[CurrencyExchange] CE;</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.0679172669459,96.3827734375,11.609375"
+              BoundingBox="-57.0600390625,11.8726047669459,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1239,7 +1239,7 @@ FROM [Proyecto].[dbo].[CurrencyExchange] CE;</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,11.4797949637868,96.3827734375,11.609375"
+              BoundingBox="-57.0600390625,9.2844824637868,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

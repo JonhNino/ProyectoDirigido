@@ -11,8 +11,8 @@
       DTS:ColumnNamesInFirstDataRow="True"
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x0022__x0022_"
-      DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\LENOVO\Desktop\Espe\Trabajo Dirigido\Dataset\csv.csv">
+      DTS:CodePage="65001"
+      DTS:ConnectionString="C:\Users\LENOVO\source\repos\ProyectoDirigido\Scritp&amp;Data\csv.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -21,7 +21,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Pair"
-          DTS:DTSID="{1C7B5D45-5F5A-4C51-A42B-5FC332A61FB5}"
+          DTS:DTSID="{4ABDC9E2-3C5B-4A3C-89F7-4ED610362803}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="From_Currency"
-          DTS:DTSID="{B821086D-D444-450F-9B02-C4984123EF8B}"
+          DTS:DTSID="{F57D3900-0024-47ED-9F93-8C20F348B33A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="To_Currency"
-          DTS:DTSID="{E97F5A57-DBDB-492C-9869-40775EA05B60}"
+          DTS:DTSID="{4A1E0158-39C9-4483-AA13-BE5984E62E64}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Date"
-          DTS:DTSID="{169581FC-6377-463A-A3DE-77C9067DFC7F}"
+          DTS:DTSID="{47CAC049-AC01-4FEA-8753-5CEB45C3F02D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Price"
-          DTS:DTSID="{7EF2EB43-A6A4-43A2-8C08-F9678E436AE0}"
+          DTS:DTSID="{DF711C84-4445-4DF5-8E5D-95B4D059FAFF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Open"
-          DTS:DTSID="{BD164AF3-7FB1-4DE4-A67F-8F0354955CA4}"
+          DTS:DTSID="{09FAA45C-42AB-4EE4-9288-69023DF8711C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="High"
-          DTS:DTSID="{981A0976-1004-494F-A0FF-1D5EDA44497C}"
+          DTS:DTSID="{995CAFAC-C143-443D-AC13-84212B7B1068}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Low"
-          DTS:DTSID="{38EF85C4-C8F7-4272-9FEA-B9D783999C46}"
+          DTS:DTSID="{D7E7BB40-7FF9-4062-8A8F-AC6E94440B16}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -93,7 +93,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Vol "
-          DTS:DTSID="{0D974626-7809-4F70-AAFC-40477E75967E}"
+          DTS:DTSID="{4813CB7E-62DC-4D15-B385-0C9F401A672A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -102,7 +102,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Change %"
-          DTS:DTSID="{2F82069D-2986-4D10-9C70-46790F224835}"
+          DTS:DTSID="{A2232A89-F24D-4891-9947-C282517652B9}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
