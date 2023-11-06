@@ -19,8 +19,8 @@ app.config['SECRET_KEY'] = '12345678'
 
 
 def connect_to_sql_server():
-    server = 'DESKTOP-LSG58H1\SQLSERVER'
-    database = 'Proyecto'
+    server = 'DESKTOP-8IT19L4\SQLSERVER'
+    database = 'DWH_Divisas'
     driver = '{ODBC Driver 17 for SQL Server}'
 
     # Usar autenticación de Windows
