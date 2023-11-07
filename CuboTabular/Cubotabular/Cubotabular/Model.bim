@@ -1,0 +1,377 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1400,
+  "model": {
+    "culture": "es-CO",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/DESKTOP-RERBLR8\\SQLSERVER;PROYECTDATADWH",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "DESKTOP-RERBLR8\\SQLSERVER",
+            "database": "PROYECTDATADWH"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "options": {},
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "kind": "SQL",
+          "path": "desktop-rerblr8\\sqlserver;PROYECTDATADWH",
+          "Username": "PROC_DIR",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "DIM_FACT_TABLE",
+        "columns": [
+          {
+            "name": "SK_DIM_TIEMPO_CARGA",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_TIEMPO_CARGA"
+          },
+          {
+            "name": "SK_DIM_TRANSACCION",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_TRANSACCION"
+          },
+          {
+            "name": "SK_DIM_MONEDA",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_MONEDA"
+          },
+          {
+            "name": "DT_DATA_LOAD",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "DT_DATA_LOAD"
+          },
+          {
+            "type": "calculated",
+            "name": "STR_PRICE",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(DIM_TRANSACCION[STR_PRICE_TRANSACCION])"
+          },
+          {
+            "type": "calculated",
+            "name": "STR_PRICE_COM",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "SUBSTITUTE([STR_PRICE],\".\",\",\")"
+          },
+          {
+            "type": "calculated",
+            "name": "NUM_PRICE",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "VALUE([STR_PRICE])"
+          },
+          {
+            "type": "calculated",
+            "name": "com1",
+            "dataType": "int64",
+            "isDataTypeInferred": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-RERBLR8\\SQLSERVER;PROYECTDATADWH\",",
+                "    dbo_DIM_FACT_TABLE = Source{[Schema=\"dbo\",Item=\"DIM_FACT_TABLE\"]}[Data]",
+                "in",
+                "    dbo_DIM_FACT_TABLE"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Recuento único de SK_DIM_TRANSACCION",
+            "expression": "DISTINCTCOUNT([SK_DIM_TRANSACCION])"
+          },
+          {
+            "name": "Suma de SK_DIM_TRANSACCION",
+            "expression": "SUM([SK_DIM_TRANSACCION])"
+          },
+          {
+            "name": "Mínimo de SK_DIM_TRANSACCION",
+            "expression": "MIN([SK_DIM_TRANSACCION])"
+          },
+          {
+            "name": "Máximo de SK_DIM_TRANSACCION",
+            "expression": "MAX([SK_DIM_TRANSACCION])"
+          },
+          {
+            "name": "PROMEDIO_PRICE",
+            "expression": "AVERAGE([NUM_PRICE])"
+          },
+          {
+            "name": "V_MAX",
+            "expression": "MAX()"
+          }
+        ]
+      },
+      {
+        "name": "DIM_MONEDA",
+        "columns": [
+          {
+            "name": "SK_DIM_MONEDA",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_MONEDA"
+          },
+          {
+            "name": "STR_PairLoad_MONEDA",
+            "dataType": "string",
+            "sourceColumn": "STR_PairLoad_MONEDA"
+          },
+          {
+            "name": "STR_FCURRENCY_MONEDA",
+            "dataType": "string",
+            "sourceColumn": "STR_FCURRENCY_MONEDA"
+          },
+          {
+            "name": "STR_TCURRENCY_MONEDA",
+            "dataType": "string",
+            "sourceColumn": "STR_TCURRENCY_MONEDA"
+          },
+          {
+            "name": "DT_DATE_UPDATE",
+            "dataType": "dateTime",
+            "sourceColumn": "DT_DATE_UPDATE"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-RERBLR8\\SQLSERVER;PROYECTDATADWH\",",
+                "    dbo_DIM_MONEDA = Source{[Schema=\"dbo\",Item=\"DIM_MONEDA\"]}[Data]",
+                "in",
+                "    dbo_DIM_MONEDA"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DIM_TIEMPO",
+        "columns": [
+          {
+            "name": "SK_DIM_TIEMPO",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_TIEMPO"
+          },
+          {
+            "name": "DT_FECHA",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "DT_FECHA"
+          },
+          {
+            "name": "NUM_ANIO",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "NUM_ANIO"
+          },
+          {
+            "name": "STR_SEMESTRE",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_SEMESTRE"
+          },
+          {
+            "name": "NUM_PERIODO",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "NUM_PERIODO"
+          },
+          {
+            "name": "STR_MES",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_MES",
+            "sortByColumn": "NUM_MES"
+          },
+          {
+            "name": "NUM_MES",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "NUM_MES"
+          },
+          {
+            "name": "NUM_DIA",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "NUM_DIA"
+          },
+          {
+            "name": "NUM_SEMANA_MES",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "NUM_SEMANA_MES"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-RERBLR8\\SQLSERVER;PROYECTDATADWH\",",
+                "    dbo_DIM_TIEMPO = Source{[Schema=\"dbo\",Item=\"DIM_TIEMPO\"]}[Data]",
+                "in",
+                "    dbo_DIM_TIEMPO"
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "TIEMPO",
+            "levels": [
+              {
+                "name": "NUM_ANIO",
+                "ordinal": 0,
+                "column": "NUM_ANIO"
+              },
+              {
+                "name": "NUM_PERIODO",
+                "ordinal": 1,
+                "column": "NUM_PERIODO"
+              },
+              {
+                "name": "STR_SEMESTRE",
+                "ordinal": 2,
+                "column": "STR_SEMESTRE"
+              },
+              {
+                "name": "STR_MES",
+                "ordinal": 3,
+                "column": "STR_MES"
+              },
+              {
+                "name": "DT_FECHA",
+                "ordinal": 4,
+                "column": "DT_FECHA"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "DIM_TRANSACCION",
+        "columns": [
+          {
+            "name": "SK_DIM_TRANSACCION",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_TRANSACCION"
+          },
+          {
+            "name": "STR_PAIR_TRANSACCION",
+            "dataType": "string",
+            "sourceColumn": "STR_PAIR_TRANSACCION"
+          },
+          {
+            "name": "STR_PRICE_TRANSACCION",
+            "dataType": "string",
+            "sourceColumn": "STR_PRICE_TRANSACCION"
+          },
+          {
+            "name": "STR_HIGH_TRANSACCION",
+            "dataType": "string",
+            "sourceColumn": "STR_HIGH_TRANSACCION"
+          },
+          {
+            "name": "STR_OPEN_TRANSACCION",
+            "dataType": "string",
+            "sourceColumn": "STR_OPEN_TRANSACCION"
+          },
+          {
+            "name": "STR_LOW_TRANSACCION",
+            "dataType": "string",
+            "sourceColumn": "STR_LOW_TRANSACCION"
+          },
+          {
+            "name": "STR_CHANGE_TRANSACCION",
+            "dataType": "string",
+            "sourceColumn": "STR_CHANGE_TRANSACCION"
+          },
+          {
+            "name": "DT_DATE_UPDATE",
+            "dataType": "dateTime",
+            "sourceColumn": "DT_DATE_UPDATE"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-RERBLR8\\SQLSERVER;PROYECTDATADWH\",",
+                "    dbo_DIM_TRANSACCION = Source{[Schema=\"dbo\",Item=\"DIM_TRANSACCION\"]}[Data]",
+                "in",
+                "    dbo_DIM_TRANSACCION"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "49d07691-add6-4ca1-a83d-8291f1fa752a",
+        "fromTable": "DIM_FACT_TABLE",
+        "fromColumn": "SK_DIM_TIEMPO_CARGA",
+        "toTable": "DIM_TIEMPO",
+        "toColumn": "SK_DIM_TIEMPO"
+      },
+      {
+        "name": "c37e4ac4-3bf8-4127-8287-fbf8ef165acb",
+        "fromTable": "DIM_FACT_TABLE",
+        "fromColumn": "SK_DIM_TRANSACCION",
+        "toTable": "DIM_TRANSACCION",
+        "toColumn": "SK_DIM_TRANSACCION"
+      },
+      {
+        "name": "f0dc34e0-5232-48c9-be00-e72730af99d6",
+        "fromTable": "DIM_FACT_TABLE",
+        "fromColumn": "SK_DIM_MONEDA",
+        "toTable": "DIM_MONEDA",
+        "toColumn": "SK_DIM_MONEDA"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "500"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
